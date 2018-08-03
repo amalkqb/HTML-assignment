@@ -1,0 +1,43 @@
+<DOCTYPE html>
+<html>
+  <head><title>Welcome</title>
+  <link href="custom.css" rel="stylesheet">
+  <script>
+    var b;
+    function display(){
+      var url = window.location.href;
+      String(url);
+      var name = url.split('=');
+      b =name[1];
+
+      document.getElementById("text").innerHTML=b;
+    }
+
+   </script>
+  </head>
+
+  <body onload="display()">
+
+
+    <!--video background-->
+    <video autoplay muted loop id="myVideo">
+      <source src="vid.mp4" type="video/mp4">
+    </video>
+
+    <!--Nav bar-->
+    <div class="topnav">
+      <a  href="login_page.html">login</a>
+      <a href="signup.html">Sign up</a>
+    </div>
+    <!--end navbar-->
+
+    <div class="login-page">
+    <div class="form">
+
+    Welcome  <span id="text"></span>
+
+    </div>
+  </div>
+
+  </body>
+</html>

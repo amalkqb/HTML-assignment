@@ -1,0 +1,64 @@
+<DOCTYPE html>
+<html>
+  <head><title>Signup</title>
+  <link href="signup_style.css" rel="stylesheet">
+  <script>
+      function Store(){
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+        var name = document.getElementById("name").value;
+        localStorage.setItem(email,password);
+        localStorage.setItem(email+"n",name);
+      //  alert("You are successfully registred!");
+        window.location = "login_page.html";
+        return false;
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Nav bar-->
+    <div class="topnav">
+      <a href="login_page.html">login</a>
+      <a class="active" href="#">Sign up</a>
+    </div>
+    <!--end navbar-->
+
+    <!--video background-->
+    <video autoplay muted loop id="myVideo">
+      <source src="vid.mp4" type="video/mp4">
+    </video>
+
+    <form style="border:1px solid #ccc">
+      <div class="container">
+      <h1>Sign Up</h1>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input id = "name" type="text" placeholder="Name" name="name" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" id = "email" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" id= "password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label for="dob"><b>NickName</b></label>
+      <input type="text" placeholder="NickName" name="nn" required>
+      <br>
+
+      <label for="gender"><b>Gender</b></label>
+      <input type="text" maxlength="1" placeholder="Gender(m/f)" name="gender" required>
+
+      <br><br>
+
+      <div class="clearfix">
+        <button onclick="return Store()" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+
+  </body>
+</html>

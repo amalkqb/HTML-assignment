@@ -1,0 +1,62 @@
+<DOCTYPE html>
+<html>
+  <head><title>My Page</title>
+  <link href="custom.css" rel="stylesheet">
+  <script>
+    function Load(){
+       var email = document.getElementById("email").value;
+       var password=document.getElementById("password").value;
+      // alert(document.getElementById("email").value);
+       var temp_password = localStorage.getItem(email);
+       var name =  localStorage.getItem(email+"n");
+      // alert(temp_password);
+       if( temp_password == null ){
+         alert("You are not registred!");
+       }
+       else if( temp_password === password ){
+         alert("You are successfully logged in "+name);
+         window.location = "welcome.html?name="+name+"";
+         return false;
+       }
+       else{
+         alert("Something is wrong...    ");
+       }
+     }
+   </script>
+  </head>
+
+  <body>
+
+
+    <!--video background-->
+    <video autoplay muted loop id="myVideo">
+      <source src="vid.mp4" type="video/mp4">
+    </video>
+
+    <!--Nav bar-->
+    <div class="topnav">
+      <a class="active" href="#">login</a>
+      <a href="signup.html">Sign up</a>
+    </div>
+    <!--end navbar-->
+
+    <div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="name"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form>
+      <form class="login-form">
+        <input id = "email" type="text" placeholder="email"/>
+        <input id = "password" type="password" placeholder="password"/>
+        <button onclick="return Load()">login</button>
+        <p class="message">Not registered? <a href="signup.html">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+
+  </body>
+</html>
